@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(222, 222, 223);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  border: 5px solid black;
+  cursor: none;
+  background-color: white;
+}
+
+.menu {
+  float: right;
+  text-align: center;
+}
+
+.columnL {
+  float: left;
+  padding-left: 10px;
+  width: 70%;
+  height: 100%;
+}
+
+.columnR {
+  float: left;
+  width: 20%;
+  padding-left: 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#mouse-circle {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: -32px 0 0 -32px;
+  border: 1px solid #0f1c64;
+  border-radius: 50%;
+  pointer-events: none;
+}
