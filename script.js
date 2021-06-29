@@ -1,19 +1,20 @@
 var canvas = document.getElementById("canvas");
+var menu = document.getElementById("menu");
 var ctx = canvas.getContext("2d");
 
 let size = 10;
 
-ctx.arc(100, 100, 10, 0, 2 * Math.PI);
-ctx.fill();
-
 
 function draw(event)
 {
-    let x = (event.pageX - canvas.getBoundingClientRect().left) * canvas.offsetWidth;
-    let y = (event.pageY - canvas.getBoundingClientRect().top) * canvas.offsetHeight;
+    let x = (event.pageX);
+    let y = (event.pageY);
     console.log(x,y);
-    ctx.rect(x, y, size, 0, 2 * Math.PI);
-    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(x, y, size, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
+    ctx.stroke;
 
 }
 
@@ -30,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
         mousePosX = e.pageX;
         mousePosY = e.pageY;
 
-        let bounds = canvas.getBoundingClientRect();
-        if (mousePosX < bounds.left || 
-            mousePosX > bounds.right || 
-            mousePosY > bounds.bottom || 
-            mousePosY < bounds.top)
+        let bounds = menu.getBoundingClientRect();
+        if (mousePosX > bounds.left &&
+            mousePosX < bounds.right &&
+            mousePosY < bounds.bottom &&
+            mousePosY > bounds.top)
         {
             mouseCircle.style.visibility = 'hidden';
         }
