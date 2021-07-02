@@ -5,6 +5,24 @@ $('#color-picker').spectrum({
 
 //$("#picker").spectrum("get");
 
+let tools = document.querySelectorAll('[id=tool]');
+console.log("Tools: " + tools);
+
+for (let i = 0; i < tools.length; i++) {
+    tools[i].addEventListener("click", function() {
+        console.log("Clicked");
+        let current = document.getElementsByClassName("active");
+
+        // If there's no active class
+        if (current.length > 0) {
+            current[0].className = current[0].className.replace(" active", "");
+        }
+
+        // Add the active class to the current/clicked button
+        this.className += " active";
+    });
+}
+
 var canvas = document.getElementById("canvas");
 var palette = document.getElementById("palette");
 var ctx = canvas.getContext("2d");
