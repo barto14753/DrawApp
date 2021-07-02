@@ -1,32 +1,33 @@
 body {
-  background-color: rgb(222, 222, 223);
+    background-color: rgb(222, 222, 223);
 }
 
 canvas {
-  width: 100vw;
-  height: 100vh;
-  cursor: none;
-  background-color: white;
+    width: 100vw;
+    height: 100vh;
+    cursor: none;
+    background-color: white;
 }
 
-.menu {
-  position: absolute;
-  padding: 35px;
-  left: 40px;
-  top: 40px;
-  text-align: center;
-  z-index: 9;
-  box-shadow: 5px 8px 50px 6px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 5px 8px 50px 6px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 5px 8px 50px 6px rgba(0, 0, 0, 0.75);
+.palette {
+    position: absolute;
+    margin-top: 100px;
+    padding: 35px;
+    left: 40px;
+    top: 40px;
+    text-align: center;
+    z-index: 9;
+    box-shadow: 5px 8px 50px 6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 8px 50px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 8px 50px 6px rgba(0, 0, 0, 0.75);
 }
 
 #mouse-circle {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  margin: -16px 0 0 -16px;
-  border: 1px solid #0f1c64;
-  border-radius: 50%;
-  pointer-events: none;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+    border: 1px solid #0f1c64;
+    border-radius: 50%;
+    pointer-events: none;
 }
