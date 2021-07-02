@@ -31,3 +31,13 @@ canvas {
     border-radius: 50%;
     pointer-events: none;
 }
+
+#icon:hover {
+    width: 33px;
+    height: 26px;
+}
+
+#tool {
+    color: white;
+    word-spacing: 5px;
+}
