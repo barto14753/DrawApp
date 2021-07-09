@@ -29,7 +29,78 @@ var ctx = canvas.getContext("2d");
 
 let mousePressed = false;
 let drawDelay = 300;
-let size = 5.0;
+let size = 3.0;
+let mode = "PENCIL" // "MARKER" "ERASER"
+let flag = false,
+prevX = 0,
+currX = 0,
+prevY = 0,
+currY = 0,
+dot_flag = false;
+
+var x = "black",
+        y = 2;
+
+function init()
+{
+    canvas.addEventListener("mousemove", function (e) {
+        findxy('move', e)
+    }, false);
+    canvas.addEventListener("mousedown", function (e) {
+        findxy('down', e)
+    }, false);
+    canvas.addEventListener("mouseup", function (e) {
+        findxy('up', e)
+    }, false);
+    canvas.addEventListener("mouseout", function (e) {
+        findxy('out', e)
+    }, false);
+    w = canvas.width;
+    h = canvas.height;
+}
+
+init();
+
+function draw() {
+    ctx.beginPath();
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(currX, currY);
+    ctx.strokeStyle = x;
+    ctx.lineWidth = y;
+    ctx.stroke();
+    ctx.closePath();
+}
+
+function findxy(res, e) {
+    if (res == 'down') {
+        prevX = currX;
+        prevY = currY;
+        currX = e.clientX - canvas.offsetLeft;
+        currY = e.clientY - canvas.offsetTop;
+
+        flag = true;
+        dot_flag = true;
+        if (dot_flag) {
+            ctx.beginPath();
+            ctx.fillStyle = x;
+            ctx.fillRect(currX, currY, 2, 2);
+            ctx.closePath();
+            dot_flag = false;
+        }
+    }
+    if (res == 'up' || res == "out") {
+        flag = false;
+    }
+    if (res == 'move') {
+        if (flag) {
+            prevX = currX;
+            prevY = currY;
+            currX = e.clientX - canvas.offsetLeft;
+            currY = e.clientY - canvas.offsetTop;
+            draw();
+        }
+    }
+}
 
 function getPos(event) {
     let rect = canvas.getBoundingClientRect(),
@@ -42,20 +113,6 @@ function getPos(event) {
     }
 }
 
-function draw(event) {
-    if (mousePressed) {
-        let pos = getPos(event);
-        console.log(pos.x, pos.y);
-        ctx.beginPath();
-        ctx.arc(pos.x, pos.y, size, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.closePath();
-        ctx.stroke;
-        //setTimeout(draw, drawDelay);
-    }
-
-
-}
 
 document.getElementById("canvas").addEventListener("mousedown", function(event) {
     console.log("Down");
@@ -90,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    let delay = 2,
+    let delay = 1,
         revisedMousePosX = 0,
         revisedMousePosY = 0;
 
@@ -105,3 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     delayMouseFollow();
 });
+
+
+var slider = document.getElementById("myRange");
+var sizeVal = document.getElementById("sizeValue")
+sizeVal.innerHTML = "Size: " + slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  sizeVal.innerHTML = "Size: " + this.value;
+}
