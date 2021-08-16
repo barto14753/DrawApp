@@ -4,9 +4,11 @@ body {
 
 canvas {
     width: 100vw;
-    height: 85vh;
+    height: 100%;
     cursor: none;
     background-color: white;
+    border: 1px solid black;
+    display: block;
 }
 
 .palette {
@@ -24,20 +26,24 @@ canvas {
 
 #mouse-circle {
     position: absolute;
-    width: 32px;
-    height: 32px;
-    margin: -16px 0 0 -16px;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
     border: 1px solid #0f1c64;
     border-radius: 50%;
     pointer-events: none;
 }
 
+#icon
+{
+  margin-left: 10px;
+}
 #icon:hover {
     width: 33px;
     height: 26px;
 }
 
-#tool {
+#tool{
     color: white;
     word-spacing: 5px;
 }
@@ -47,6 +53,23 @@ canvas {
     padding: 5px;
     border-radius: 5px;
 }
+
+#earser{
+  color: white;
+  word-spacing: 5px;
+}
+
+#earser:hover
+{
+  background-color: rgb(55, 142, 241);
+    border-radius: 5px;
+}
+
+#earser:active
+{
+  background-color: rgb(91, 163, 245);
+}
+
 
 .slidecontainer {
     width: 100%; /* Width of the outside container */

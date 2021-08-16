@@ -6,7 +6,6 @@
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/jpg" href="icons/favicon.ico"/>
     <!-- 'classic' theme -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -20,24 +19,24 @@
     <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="icons/icon128.png" id="icon" alt="" width="30" height="24" class="d-inline-block align-text-top"> DrawApp
+                <img src="icons/icon128.png" id="icon" alt="" width="30" height="25" class="d-inline-block align-text-top"> DrawApp
             </a>
             <a class="nav-item nav-link" href="#" id="tool">
-                <img src="icons/pencil.png" id="" alt="" width="30" height="24" class="d-inline-block align-text-top"> Pencil
+                <img src="icons/pencil.png" id="pencilBtn" alt="" width="30" height="25" class="d-inline-block align-text-top"> Pencil
             </a>
-            <a class="nav-item nav-link" href="#" id="tool">
+            <!-- <a class="nav-item nav-link" href="#" id="tool">
                 <img src="icons/marker.png" id="" alt="" width="30" height="24" class="d-inline-block align-text-top"> Marker
-            </a>
+            </a> -->
             <a class="nav-item nav-link" href="#" id="tool">
-                <img src="icons/eraser.png" id="" alt="" width="30" height="24" class="d-inline-block align-text-top"> Earser
+                <img src="icons/eraser.png" id="earserBtn" alt="" width="30" height="25" class="d-inline-block align-text-top"> Earser
             </a>
-            <a class="nav-item nav-link" href="#" id="tool">
-                <img src="icons/reset.png" id="" alt="" width="30" height="24" class="d-inline-block align-text-top"> Reset
+            <a class="nav-item nav-link" href="#" id="earser">
+                <img src="icons/reset.png" id="clearBtn" alt="" width="30" height="25" class="d-inline-block align-text-top"> Clear
             </a>
             <a class="nav-item nav-link">
                 <div class="slidecontainer">
                     <p id="sizeValue">Size: </p>
-                    <input type="range" min="1" max="50" value="25" step="1" class="slider" id="myRange">
+                    <input type="range" min="1" max="100" value="20" step="1" class="slider" id="myRange">
                   </div>
             </a>
             <a class="nav-item nav-link" href="#" id="tool">
@@ -45,7 +44,8 @@
             </a>
         </div>
     </nav>
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas" style="display: block;">
+	</canvas>
 
 </body>
 <script src="script.js"></script>
