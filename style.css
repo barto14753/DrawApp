@@ -43,7 +43,7 @@ canvas {
     height: 26px;
 }
 
-#tool{
+.tool{
     color: white;
     word-spacing: 5px;
 }
@@ -54,18 +54,28 @@ canvas {
     border-radius: 5px;
 }
 
-#earser{
+#pencilBtn
+{
+  color:white;
+}
+
+#earserBtn
+{
+  color:white;
+}
+
+#clearBtn{
   color: white;
   word-spacing: 5px;
 }
 
-#earser:hover
+#clearBtn:hover
 {
   background-color: rgb(55, 142, 241);
     border-radius: 5px;
 }
 
-#earser:active
+#clearBtn:active
 {
   background-color: rgb(91, 163, 245);
 }

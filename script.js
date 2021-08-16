@@ -25,7 +25,8 @@ let SETTINGS =
 
 function initTools()
 {
-    let tools = document.querySelectorAll('[id=tool]');
+    //let tools = document.querySelectorAll('[id=tool]');
+    let tools = document.getElementsByClassName("tool");
     console.log("Tools: " + tools);
 
     for (let i = 0; i < tools.length; i++) {
@@ -118,9 +119,6 @@ context.lineWidth = radius * 2;
 let putPoint = function(e){
    
 	if(dragging){
-        // console.log(SETTINGS.mode);
-        // console.log(SETTINGS.mode == "PENCIL");
-        // console.log(SETTINGS.mode == "EARSER");
 
         if(SETTINGS.mode == "PENCIL")
         {
