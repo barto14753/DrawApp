@@ -116,19 +116,27 @@ canvas.height = window.innerHeight;
 
 context.lineWidth = radius * 2;
 
+
+function getCurrentColor()
+{
+    return $("#color-picker").spectrum("get").toHexString();
+}
+
 let putPoint = function(e){
    
 	if(dragging){
 
         if(SETTINGS.mode == "PENCIL")
         {
-            context.fillStyle = $("#color-picker").spectrum("get").toHex();
-            context.strokeStyle = $("#color-picker").spectrum("get").toHex();
+            context.fillStyle = getCurrentColor();
+            context.strokeStyle = getCurrentColor();
+
         }
         else if(SETTINGS.mode == "EARSER")
         {
             context.fillStyle = "white";
             context.strokeStyle = "white";
+
         }
         context.lineWidth = 2*radius;
         context.lineTo(e.offsetX, e.offsetY);
